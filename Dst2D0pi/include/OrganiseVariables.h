@@ -20,6 +20,7 @@ namespace Dst2D0pi {
     private:
 
       Double_t CalculateSignedVtxDist();
+      Double_t CalculateVtxDistZ();
 
   };
 

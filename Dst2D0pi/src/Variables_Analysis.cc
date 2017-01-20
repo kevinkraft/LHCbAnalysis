@@ -534,15 +534,15 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("HLT2TCK"                               , &HLT2TCK                                 );
   //tree->SetBranchAddress("GpsTime"                               , &GpsTime                                 );
   tree->SetBranchAddress("Polarity"                              , &Polarity                                );
-  tree->SetBranchAddress("PVX"                                   ,  PVX                                     );
-  tree->SetBranchAddress("PVY"                                   ,  PVY                                     );
-  tree->SetBranchAddress("PVZ"                                   ,  PVZ                                     );
-  tree->SetBranchAddress("PVXERR"                                ,  PVXERR                                  );
-  tree->SetBranchAddress("PVYERR"                                ,  PVYERR                                  );
-  tree->SetBranchAddress("PVZERR"                                ,  PVZERR                                  );
-  tree->SetBranchAddress("PVCHI2"                                ,  PVCHI2                                  );
-  tree->SetBranchAddress("PVNDOF"                                ,  PVNDOF                                  );
-  tree->SetBranchAddress("PVNTRACKS"                             ,  PVNTRACKS                               );
+  tree->SetBranchAddress("PVX"                                  , &PVX                                     );
+  tree->SetBranchAddress("PVY"                                  , &PVY                                     );
+  tree->SetBranchAddress("PVZ"                                  , &PVZ                                     );
+  tree->SetBranchAddress("PVXERR"                               , &PVXERR                                  );
+  tree->SetBranchAddress("PVYERR"                               , &PVYERR                                  );
+  tree->SetBranchAddress("PVZERR"                               , &PVZERR                                  );
+  tree->SetBranchAddress("PVCHI2"                               , &PVCHI2                                  );
+  tree->SetBranchAddress("PVNDOF"                               , &PVNDOF                                  );
+  tree->SetBranchAddress("PVNTRACKS"                            , &PVNTRACKS                               );
   //tree->SetBranchAddress("PVsumPT"                               ,  PVsumPT                                 );
   tree->SetBranchAddress("nPVs"                                  , &nPVs                                    );
   tree->SetBranchAddress("nTracks"                               , &nTracks                                 );
@@ -587,14 +587,22 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("nSPDHits"                              , &nSPDHits                                , "nSPDHits/I"                            );
   // PV
   tree->Branch("nPV"                                   , &nPV                                     , "nPV/I"                                 );
-  tree->Branch("PV_X"                                  , &PVX                                     , "PVX[nPV]/F"                            );
-  tree->Branch("PV_Y"                                  , &PVY                                     , "PVY[nPV]/F"                            );
-  tree->Branch("PV_Z"                                  , &PVZ                                     , "PVZ[nPV]/F"                            );
-  tree->Branch("PV_EX"                                 , &PVXERR                                  , "PVXERR[nPV]/F"                         );
-  tree->Branch("PV_EY"                                 , &PVYERR                                  , "PVYERR[nPV]/F"                         );
-  tree->Branch("PV_EZ"                                 , &PVZERR                                  , "PVZERR[nPV]/F"                         );
-  tree->Branch("PV_Chi2"                               , &PVCHI2                                  , "PVCHI2[nPV]/F"                         );
-  tree->Branch("PV_Ndof"                               , &PVNDOF                                  , "PVNDOF[nPV]/F"                         );
+  tree->Branch("BPV_X"                                  , &BPVX                                     , "BPVX/F"                            );
+  tree->Branch("BPV_Y"                                  , &BPVY                                     , "BPVY/F"                            );
+  tree->Branch("BPV_Z"                                  , &BPVZ                                     , "BPVZ/F"                            );
+  tree->Branch("BPV_EX"                                 , &BPVXERR                                  , "BPVXERR/F"                         );
+  tree->Branch("BPV_EY"                                 , &BPVYERR                                  , "BPVYERR/F"                         );
+  tree->Branch("BPV_EZ"                                 , &BPVZERR                                  , "BPVZERR/F"                         );
+  tree->Branch("BPV_Chi2"                               , &BPVCHI2                                  , "BPVCHI2/F"                         );
+  tree->Branch("BPV_Ndof"                               , &BPVNDOF                                  , "BPVNDOF/F"                         );
+  tree->Branch("allPV_X"                                , &PVX                                   , "allPVX[nPV]/F"                     );
+  tree->Branch("allPV_Y"                                , &PVY                                   , "allPVY[nPV]/F"                     );
+  tree->Branch("allPV_Z"                                , &PVZ                                   , "allPVZ[nPV]/F"                     );
+  tree->Branch("allPV_EX"                               , &PVXERR                                , "allPVXERR[nPV]/F"                  );
+  tree->Branch("allPV_EY"                               , &PVYERR                                , "allPVYERR[nPV]/F"                  );
+  tree->Branch("allPV_EZ"                               , &PVZERR                                , "allPVZERR[nPV]/F"                  );
+  tree->Branch("allPV_Chi2"                             , &PVCHI2                                , "allPVCHI2[nPV]/F"                  );
+  tree->Branch("allPV_Ndof"                             , &PVNDOF                                , "allPVNDOF[nPV]/F"                  );
   // D*
   tree->Branch("Dst_BPVVDZ"                            , &Dst_BPVVDZ                              , "Dst_BPVVDZ/D"                          );
   tree->Branch("Dst_DIRA_OWNPV"                        , &Dst_DIRA_OWNPV                          , "Dst_DIRA_OWNPV/D"                      );
@@ -732,5 +740,7 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("mDz"                                   , &mDz                                     , "mDz/D"                                 );
   tree->Branch("mDst"                                  , &mDst                                    , "mDst/D"                                );
   tree->Branch("dm"                                    , &dm                                      , "dm/D"                                  );
-  tree->Branch("Dst_Vtx_dist"                          , &Dst_Vtx_dist                            , "Dst_Vtx_dist/D"                        );
+  //vertex distances for removing secondary
+  tree->Branch("Dst_Vtx_dist_z"                        , &Dst_Vtx_dist_z                          , "Dst_Vtx_dist_z/D"                      );
+  tree->Branch("Dst_Vtx_dist_signed"                   , &Dst_Vtx_dist_signed                     , "Dst_Vtx_dist_signed/D"                 );
 }

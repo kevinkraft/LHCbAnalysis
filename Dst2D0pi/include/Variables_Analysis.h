@@ -548,6 +548,26 @@ namespace Dst2D0pi {
       UInt_t               HLT2TCK                                 ;
       ULong64_t            GpsTime                                 ;
       Short_t              Polarity                                ;
+      Float_t              BPVX                                    ;
+      Float_t              BPVY                                    ;
+      Float_t              BPVZ                                    ;
+      Float_t              BPVXERR                                 ;
+      Float_t              BPVYERR                                 ;
+      Float_t              BPVZERR                                 ;
+      Float_t              BPVCHI2                                 ;
+      Float_t              BPVNDOF                                 ;
+      Float_t              BPVNTRACKS                              ;
+      Float_t              BPVsumPT                                ;
+      Float_t              allPVX[100]                             ;
+      Float_t              allPVY[100]                             ;
+      Float_t              allPVZ[100]                             ;
+      Float_t              allPVXERR[100]                          ;
+      Float_t              allPVYERR[100]                          ;
+      Float_t              allPVZERR[100]                          ;
+      Float_t              allPVCHI2[100]                          ;
+      Float_t              allPVNDOF[100]                          ;
+      Float_t              allPVNTRACKS[100]                       ;
+      Float_t              allPVsumPT[100]                         ;
       Float_t              PVX[100]                                ;
       Float_t              PVY[100]                                ;
       Float_t              PVZ[100]                                ;
@@ -587,7 +607,8 @@ namespace Dst2D0pi {
       Double_t             mDz                                     ;
       Double_t             mDst                                    ;
       Double_t             dm                                      ;
-      Double_t             Dst_Vtx_dist                            ;
+      Double_t             Dst_Vtx_dist_z                          ;
+      Double_t             Dst_Vtx_dist_signed                     ;
 
   };
 

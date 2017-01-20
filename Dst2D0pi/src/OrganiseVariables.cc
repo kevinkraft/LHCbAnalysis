@@ -26,6 +26,13 @@ Double_t Dst2D0pi::OrganiseVariables::CalculateSignedVtxDist() {
   return dist;
 }
 
+Double_t Dst2D0pi::OrganiseVariables::CalculateVtxDistZ() {
+  
+  Double_t dist(0.);
+  dist = v->Dst_ENDVERTEX_Z - v->Dst_OWNPV_Z ;
+  return dist;
+}
+
 bool Dst2D0pi::OrganiseVariables::AnalyseEvent(){
  
   // add the new variables or manipulate them
@@ -40,7 +47,8 @@ bool Dst2D0pi::OrganiseVariables::AnalyseEvent(){
   v->mDz  = v->D0_M / 1000.;
   v->mDst = v->Dst_M / 1000.;
   v->dm   = (v->Dst_M - v->D0_M) / 1000.;
-  v->Dst_Vtx_dist = CalculateSignedVtxDist();
+  v->Dst_Vtx_dist_signed = CalculateSignedVtxDist();
+  v->Dst_Vtx_dist_z = CalculateVtxDistZ();
 
   v->Dst_P  /= 1000.;
   v->Dst_PX /= 1000.;
@@ -76,6 +84,17 @@ bool Dst2D0pi::OrganiseVariables::AnalyseEvent(){
   v->PiBach_PZ /= 1000.;
   v->PiBach_PE /= 1000.;
   v->PiBach_PT /= 1000.;
+
+  v->BPVX = 1.;
+  v->BPVY= 1.;
+  v->BPVY = 1.;
+  v->BPVXERR = 1.;
+  v->BPVYERR = 1.;
+  v->BPVZERR = 1.;
+  v->BPVCHI2 = 1.;
+  v->BPVNDOF = 1.;
+  v->BPVNTRACKS = 1.;
+  v->BPVsumPT = 1.;
 
   return true;
 }

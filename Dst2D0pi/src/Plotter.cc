@@ -23,7 +23,7 @@ void Dst2D0pi::Plotter::defineHistograms(){
   addHist("mDz"            , "m(D^{0}) [GeV/c^{2}]",  150,  1.8, 1.95, "R" );
   addHist("mDst"           , "m(D^{#star+}) [GeV/c^{2}]", 100, 1.9, 2.1, "R" );
   addHist("dm"             , "m(D^{#star+}) [GeV/c^{2}]", 100, 0.12, 0.16, "R" );
-  addHist("Dst_Vtx_dist"   , "dist(D^{#star+})", 100, -100, 150, "R" );
+  addHist("Dst_Vtx_dist_z"   , "dist(D^{#star+})", 100, -100, 150, "R" );
 }
 
 void Dst2D0pi::Plotter::defineDrawingConfig(){
@@ -52,7 +52,7 @@ bool Dst2D0pi::Plotter::fillHistograms(){
   fillHist("mDz"            , v->mDz  );
   fillHist("mDst"           , v->mDst );
   fillHist("dm"             , v->dm   );
-  fillHist("Dst_Vtx_dist"   , v->Dst_Vtx_dist );
+  fillHist("Dst_Vtx_dist_z"   , v->Dst_Vtx_dist_z );
   
   return true;
 }
