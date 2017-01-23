@@ -3,10 +3,10 @@
 import os
 
 #filesperjob=50
-filesperjob=3
+filesperjob=15
 
 #f = open('dat/data_cfg.dat')
-f = open('/afs/cern.ch/user/k/kmaguire/Programs/MattKenzieAnalysis/Dst2D0pi/dat/analysis_cfg.dat')
+f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/analysis_cfg.dat')
 
 file_lines = []
 
@@ -17,11 +17,14 @@ for line in f.readlines():
 #bq = 'test'
 #bq = '8nm'
 #bq = '1nh'
-#bq = '8nh'
+bq = '8nh'
 #bq = '1nd'
 jobsfolder = 'data_jobs_'+bq
 
 jobsreq = len(file_lines)/filesperjob + 1
+
+print jobsreq, ' ', filesperjob, ' ', len(file_lines)
+
 #jobsreq = 1
 
 for j in range(jobsreq):

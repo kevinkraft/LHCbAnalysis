@@ -148,8 +148,8 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("D0_X_travelled"                        , &D0_X_travelled                          );
   //tree->SetBranchAddress("D0_Y_travelled"                        , &D0_Y_travelled                          );
   //tree->SetBranchAddress("D0_Z_travelled"                        , &D0_Z_travelled                          );
-  //tree->SetBranchAddress("D0_AllIP"                              ,  D0_AllIP                                );
-  //tree->SetBranchAddress("D0_AllIPchi2"                          ,  D0_AllIPchi2                            );
+  tree->SetBranchAddress("D0_AllIP"                              ,  D0_AllIP                                );
+  tree->SetBranchAddress("D0_AllIPchi2"                          ,  D0_AllIPchi2                            );
   //tree->SetBranchAddress("D0_AllDIRA"                            ,  D0_AllDIRA                              );
   tree->SetBranchAddress("D0_ENDVERTEX_X"                        , &D0_ENDVERTEX_X                          );
   tree->SetBranchAddress("D0_ENDVERTEX_Y"                        , &D0_ENDVERTEX_Y                          );

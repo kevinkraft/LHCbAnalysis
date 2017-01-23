@@ -33,6 +33,18 @@ Double_t Dst2D0pi::OrganiseVariables::CalculateVtxDistZ() {
   return dist;
 }
 
+Int_t Dst2D0pi::OrganiseVariables::getBestPVIndex() {
+  //returns the index in the lists of PV variables for the PV with the smallest
+  //D0 IPChi2. Also performs some checks
+  vector<float> ipchi2s;
+  for (unsigned int i=0; i < v->nPV; i++) {
+    ipchi2s.push_back( v->D0_AllIPchi2[i] );
+  }
+  //get the index of minimum entry
+  return distance( ipchi2s.begin(), min_element( ipchi2s.begin(), ipchi2s.end()) );
+
+}
+
 bool Dst2D0pi::OrganiseVariables::AnalyseEvent(){
  
   // add the new variables or manipulate them
@@ -85,16 +97,17 @@ bool Dst2D0pi::OrganiseVariables::AnalyseEvent(){
   v->PiBach_PE /= 1000.;
   v->PiBach_PT /= 1000.;
 
-  v->BPVX = 1.;
-  v->BPVY= 1.;
-  v->BPVY = 1.;
-  v->BPVXERR = 1.;
-  v->BPVYERR = 1.;
-  v->BPVZERR = 1.;
-  v->BPVCHI2 = 1.;
-  v->BPVNDOF = 1.;
-  v->BPVNTRACKS = 1.;
-  v->BPVsumPT = 1.;
+  Int_t bpvi = getBestPVIndex();
+  v->BPVX = v->PVX[bpvi];
+  v->BPVY= v->PVY[bpvi];
+  v->BPVZ = v->PVZ[bpvi];
+  v->BPVXERR = v->PVXERR[bpvi];
+  v->BPVYERR = v->PVYERR[bpvi];
+  v->BPVZERR = v->PVZERR[bpvi];
+  v->BPVCHI2 = v->PVCHI2[bpvi];
+  v->BPVNDOF = v->PVNDOF[bpvi];
+  v->BPVNTRACKS = v->PVNTRACKS[bpvi];
+  //v->BPVsumPT = v->PVsumPT[bpvi];
 
   return true;
 }

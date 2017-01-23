@@ -21,6 +21,7 @@ namespace Dst2D0pi {
 
       Double_t CalculateSignedVtxDist();
       Double_t CalculateVtxDistZ();
+      Int_t getBestPVIndex();
 
   };
 
