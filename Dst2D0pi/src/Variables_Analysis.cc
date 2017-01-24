@@ -159,13 +159,13 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   tree->SetBranchAddress("D0_ENDVERTEX_ZERR"                     , &D0_ENDVERTEX_ZERR                       );
   tree->SetBranchAddress("D0_ENDVERTEX_NDOF"                     , &D0_ENDVERTEX_NDOF                       );
   //tree->SetBranchAddress("D0_ENDVERTEX_COV_"                     ,  D0_ENDVERTEX_COV_                       );
-  //tree->SetBranchAddress("D0_OWNPV_X"                            , &D0_OWNPV_X                              );
-  //tree->SetBranchAddress("D0_OWNPV_Y"                            , &D0_OWNPV_Y                              );
-  //tree->SetBranchAddress("D0_OWNPV_Z"                            , &D0_OWNPV_Z                              );
-  //tree->SetBranchAddress("D0_OWNPV_XERR"                         , &D0_OWNPV_XERR                           );
-  //tree->SetBranchAddress("D0_OWNPV_YERR"                         , &D0_OWNPV_YERR                           );
-  //tree->SetBranchAddress("D0_OWNPV_ZERR"                         , &D0_OWNPV_ZERR                           );
-  //tree->SetBranchAddress("D0_OWNPV_CHI2"                         , &D0_OWNPV_CHI2                           );
+  tree->SetBranchAddress("D0_OWNPV_X"                            , &D0_OWNPV_X                              );
+  tree->SetBranchAddress("D0_OWNPV_Y"                            , &D0_OWNPV_Y                              );
+  tree->SetBranchAddress("D0_OWNPV_Z"                            , &D0_OWNPV_Z                              );
+  tree->SetBranchAddress("D0_OWNPV_XERR"                         , &D0_OWNPV_XERR                           );
+  tree->SetBranchAddress("D0_OWNPV_YERR"                         , &D0_OWNPV_YERR                           );
+  tree->SetBranchAddress("D0_OWNPV_ZERR"                         , &D0_OWNPV_ZERR                           );
+  tree->SetBranchAddress("D0_OWNPV_CHI2"                         , &D0_OWNPV_CHI2                           );
   //tree->SetBranchAddress("D0_OWNPV_NDOF"                         , &D0_OWNPV_NDOF                           );
   //tree->SetBranchAddress("D0_OWNPV_COV_"                         ,  D0_OWNPV_COV_                           );
   tree->SetBranchAddress("D0_IP_OWNPV"                           , &D0_IP_OWNPV                             );
@@ -194,8 +194,8 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("D0_MMERR"                              , &D0_MMERR                                );
   tree->SetBranchAddress("D0_M"                                  , &D0_M                                    );
   //tree->SetBranchAddress("D0_ID"                                 , &D0_ID                                   );
-  //tree->SetBranchAddress("D0_TAU"                                , &D0_TAU                                  );
-  //tree->SetBranchAddress("D0_TAUERR"                             , &D0_TAUERR                               );
+  tree->SetBranchAddress("D0_TAU"                                , &D0_TAU                                  );
+  tree->SetBranchAddress("D0_TAUERR"                             , &D0_TAUERR                               );
   //tree->SetBranchAddress("D0_TAUCHI2"                            , &D0_TAUCHI2                              );
   //tree->SetBranchAddress("D0_L0Global_Dec"                       , &D0_L0Global_Dec                         );
   //tree->SetBranchAddress("D0_L0Global_TIS"                       , &D0_L0Global_TIS                         );
@@ -647,6 +647,15 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("D0_Vtx_ZERR"                           , &D0_ENDVERTEX_ZERR                       , "D0_ENDVERTEX_ZERR/D"                   );
   tree->Branch("D0_IP"                                 , &D0_IP_OWNPV                             , "D0_IP_OWNPV/D"                         );
   tree->Branch("D0_IPChi2"                             , &D0_IPCHI2_OWNPV                         , "D0_IPCHI2_OWNPV/D"                     );
+  tree->Branch("D0_OWNPV_X"                              , &D0_OWNPV_X                          , "D0_OWNPV_X/D"                      );
+  tree->Branch("D0_OWNPV_Y"                              , &D0_OWNPV_Y                          , "D0_OWNPV_Y/D"                      );
+  tree->Branch("D0_OWNPV_Z"                              , &D0_OWNPV_Z                          , "D0_OWNPV_Z/D"                      );
+  tree->Branch("D0_OWNPV_XERR"                           , &D0_OWNPV_XERR                       , "D0_OWNPV_XERR/D"                   );
+  tree->Branch("D0_OWNPV_YERR"                           , &D0_OWNPV_YERR                       , "D0_OWNPV_YERR/D"                   );
+  tree->Branch("D0_OWNPV_ZERR"                           , &D0_OWNPV_ZERR                       , "D0_OWNPV_ZERR/D"                   );
+  tree->Branch("D0_OWNPV_CHI2"                           , &D0_OWNPV_CHI2                       , "D0_OWNPV_CHI2/D"                   );
+  tree->Branch("D0_IP_OWNPV"                             , &D0_IP_OWNPV                         , "D0_IP_OWNPV/D"                     );
+  tree->Branch("D0_IPCHI2_OWNPV"                         , &D0_IPCHI2_OWNPV                     , "D0_IPCHI2_OWNPV/D"                 );
   tree->Branch("D0_FD"                                 , &D0_FD_OWNPV                             , "D0_FD_OWNPV/D"                         );
   tree->Branch("D0_FDChi2"                             , &D0_FDCHI2_OWNPV                         , "D0_FDCHI2_OWNPV/D"                     );
   tree->Branch("D0_P"                                  , &D0_P                                    , "D0_P/D"                                );
@@ -655,7 +664,9 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("D0_PX"                                 , &D0_PX                                   , "D0_PX/D"                               );
   tree->Branch("D0_PY"                                 , &D0_PY                                   , "D0_PY/D"                               );
   tree->Branch("D0_PZ"                                 , &D0_PZ                                   , "D0_PZ/D"                               );
-  tree->Branch("D0_M"                                  , &D0_M                                    , "D0_M/D"                               );
+  tree->Branch("D0_M"                                  , &D0_M                                    , "D0_M/D"                                );
+  tree->Branch("D0_TAU"                                , &D0_TAU                                  , "D0_TAU/D"                              );
+  tree->Branch("D0_TAUERR"                             , &D0_TAUERR                               , "D0_TAUERR"                             );
   // Km 
   tree->Branch("K_BPVVDZ"                              , &K_BPVVDZ                                , "K_BPVVDZ/D"                            );
   tree->Branch("K_DIRA_OWNPV"                          , &K_DIRA_OWNPV                            , "K_DIRA_OWNPV/D"                        );
