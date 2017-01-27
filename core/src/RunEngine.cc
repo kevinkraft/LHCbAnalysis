@@ -62,6 +62,7 @@ void RunEngine::createBatchJobs()
 
 void RunEngine::setupConfig()
 {
+
   // add files etc. (needs to be sorted out)
   for ( vector<InputFileOptions>::iterator fOpt = cfg.config.begin(); fOpt != cfg.config.end(); fOpt++ ) {
 

@@ -38,6 +38,15 @@ void Config::readDatFile(const std::string &datfile) {
       vector<string> element_arg_val;
       split ( element_arg_val, *el, is_any_of("=") );
 
+      //special case where the XROOTD path has a '=' in it
+      if ( element_arg_val[0] == "fname" && element_arg_val.size() == 3 )
+	{
+	  vector<string> oelements = element_arg_val;
+	  element_arg_val.clear();
+	  element_arg_val.push_back( oelements[0] );
+	  element_arg_val.push_back( oelements[1]+"="+oelements[2] );
+	}
+
       if ( element_arg_val.size()!=2 ) continue;
 
       if ( element_arg_val[0] == "itype" ) {

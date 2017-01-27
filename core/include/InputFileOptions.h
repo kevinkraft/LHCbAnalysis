@@ -12,6 +12,8 @@ class InputFileOptions {
     InputFileOptions( TString _name, int _itype );
     InputFileOptions( TString _name, int _itype, int _sqrts, TString _year);
 
+    void printFileOptions();
+
     TString   name;
     int       itype;
     int       sqrts;
