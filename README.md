@@ -25,3 +25,5 @@ This will take forever to run in one go so you can split it into jobs (and run o
 scripts/split_up_data_jobs.py (https://github.com/matthewkenzie/LHCbAnalysis/blob/master/Dst2D0pi/scripts/split_up_data_jobs.py)
 
 You may want to comment line 51 of this script before running it otherwise it will submit a load of jobs (https://github.com/matthewkenzie/LHCbAnalysis/blob/master/Dst2D0pi/scripts/split_up_data_jobs.py#L51 )
+
+bin/Dst2D0pi_Analysis -f 0 -l 100 -c dat/may17_test.dat -o test.root

@@ -4,7 +4,8 @@ import os
 
 filesperjob=1
 
-f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/jan17_full.dat')
+#f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/jan17_full.dat')
+f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/may17_test.dat')
 
 file_lines = []
 
@@ -12,9 +13,9 @@ for line in f.readlines():
   if not line.startswith('itype'): continue
   file_lines.append(line)
 
-bq = 'test'
+#bq = 'test'
 #bq = '8nm'
-#bq = '1nh'
+bq = '1nh'
 #bq = '8nh'
 #bq = '1nd'
 jobsfolder = 'data_jobs_'+bq
@@ -22,6 +23,8 @@ jobsfolder = 'data_jobs_'+bq
 jobsreq = len(file_lines)
 
 print jobsreq, ' ', filesperjob, ' ', len(file_lines)
+
+#rerun = []
 
 for j in range(0, jobsreq):
 
@@ -33,7 +36,8 @@ for j in range(0, jobsreq):
     #if 'cnaf' in file_lines[i]:
       #print 'Job {0} has the extra XROOTD suffix'.format(j)
       #print 'Job {0} is cnaf'.format(j)
-    submit = True
+    #if i in rerun:
+    #  submit = True
     df = open('%s/'%(os.getcwd())+jobsfolder+'/data_j%d.dat'%(j),'w')
     df.write(file_lines[i])
     df.close()

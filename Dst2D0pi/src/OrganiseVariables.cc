@@ -109,5 +109,22 @@ bool Dst2D0pi::OrganiseVariables::AnalyseEvent(){
   v->BPVNTRACKS = v->PVNTRACKS[bpvi];
   //v->BPVsumPT = v->PVsumPT[bpvi];
 
+  //transfer the DTF PV arrays into a single value
+  v->Dst_DTF_D0_M = v->arr_Dst_DTF_D0_M[0];
+  v->Dst_DTF_M = v->arr_Dst_DTF_M[0];
+  v->Dst_DTF_chi2 = v->arr_Dst_DTF_chi2[0];
+  v->Dst_DTF_bothmass_D0_M = v->arr_Dst_DTF_bothmass_D0_M[0];
+  v->Dst_DTF_bothmass_M = v->arr_Dst_DTF_bothmass_M[0];
+  v->Dst_DTF_bothmass_chi2 = v->arr_Dst_DTF_bothmass_chi2[0];
+  v->Dst_DTF_mass_D0_M = v->arr_Dst_DTF_mass_D0_M[0];
+  v->Dst_DTF_mass_M = v->arr_Dst_DTF_mass_M[0];
+  v->Dst_DTF_mass_chi2 = v->arr_Dst_DTF_mass_chi2[0];
+  v->Dst_DTF_mass_vtx_D0_M = v->arr_Dst_DTF_mass_vtx_D0_M[0];
+  v->Dst_DTF_mass_vtx_M = v->arr_Dst_DTF_mass_vtx_M[0];
+  v->Dst_DTF_mass_vtx_chi2 = v->arr_Dst_DTF_mass_vtx_chi2[0];
+  v->Dst_DTF_vtx_D0_M = v->arr_Dst_DTF_vtx_D0_M[0];
+  v->Dst_DTF_vtx_M = v->arr_Dst_DTF_vtx_M[0];
+  v->Dst_DTF_vtx_chi2 = v->arr_Dst_DTF_vtx_chi2[0];
+
   return true;
 }

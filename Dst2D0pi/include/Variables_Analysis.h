@@ -69,6 +69,45 @@ namespace Dst2D0pi {
       Double_t             Dst_TAU                                 ;
       Double_t             Dst_TAUERR                              ;
       Double_t             Dst_TAUCHI2                             ;
+      // DTF vars, they are stored as arrays for each PV, only save the first, which is the best PV
+      // input
+      Int_t                Dst_DTF_nPV                             ;
+      Float_t              arr_Dst_DTF_D0_M[100]                   ;
+      Float_t              arr_Dst_DTF_M[100]                      ;
+      Float_t              arr_Dst_DTF_chi2[100]                   ;
+      Int_t                Dst_DTF_bothmass_nPV                    ;
+      Float_t              arr_Dst_DTF_bothmass_D0_M[100]          ;
+      Float_t              arr_Dst_DTF_bothmass_M[100]             ;
+      Float_t              arr_Dst_DTF_bothmass_chi2[100]          ;
+      Int_t                Dst_DTF_mass_nPV                        ;
+      Float_t              arr_Dst_DTF_mass_D0_M[100]              ;
+      Float_t              arr_Dst_DTF_mass_M[100]                 ;
+      Float_t              arr_Dst_DTF_mass_chi2[100]              ;
+      Int_t                Dst_DTF_mass_vtx_nPV                    ;
+      Float_t              arr_Dst_DTF_mass_vtx_D0_M[100]          ;
+      Float_t              arr_Dst_DTF_mass_vtx_M[100]             ;
+      Float_t              arr_Dst_DTF_mass_vtx_chi2[100]          ;
+      Int_t                Dst_DTF_vtx_nPV                         ;
+      Float_t              arr_Dst_DTF_vtx_D0_M[100]               ;
+      Float_t              arr_Dst_DTF_vtx_M[100]                  ;
+      Float_t              arr_Dst_DTF_vtx_chi2[100]               ;
+      // output
+      Float_t              Dst_DTF_D0_M                            ;
+      Float_t              Dst_DTF_M                               ;
+      Float_t              Dst_DTF_chi2                            ;
+      Float_t              Dst_DTF_bothmass_D0_M                   ;
+      Float_t              Dst_DTF_bothmass_M                      ;
+      Float_t              Dst_DTF_bothmass_chi2                   ;
+      Float_t              Dst_DTF_mass_D0_M                       ;
+      Float_t              Dst_DTF_mass_M                          ;
+      Float_t              Dst_DTF_mass_chi2                       ;
+      Float_t              Dst_DTF_mass_vtx_D0_M                   ;
+      Float_t              Dst_DTF_mass_vtx_M                      ;
+      Float_t              Dst_DTF_mass_vtx_chi2                   ;
+      Float_t              Dst_DTF_vtx_D0_M                        ;
+      Float_t              Dst_DTF_vtx_M                           ;
+      Float_t              Dst_DTF_vtx_chi2                        ; 
+      // Dst triggers
       Bool_t               Dst_L0Global_Dec                        ;
       Bool_t               Dst_L0Global_TIS                        ;
       Bool_t               Dst_L0Global_TOS                        ;
@@ -150,6 +189,7 @@ namespace Dst2D0pi {
       Bool_t               Dst_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_Dec;
       Bool_t               Dst_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_TIS;
       Bool_t               Dst_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_TOS;
+      // D0
       Double_t             D0_BPVVDZ                               ;
       Double_t             D0_DIRA_OWNPV                           ;
       Double_t             D0_ENDVERTEX_CHI2                       ;

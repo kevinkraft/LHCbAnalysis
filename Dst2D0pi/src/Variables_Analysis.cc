@@ -21,7 +21,7 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("Dst_AllIP"                             ,  Dst_AllIP                               );
   //tree->SetBranchAddress("Dst_AllIPchi2"                         ,  Dst_AllIPchi2                           );
   //tree->SetBranchAddress("Dst_AllDIRA"                           ,  Dst_AllDIRA                             );
-  //tree->SetBranchAddress("Dst_ENDVERTEX_X"                       , &Dst_ENDVERTEX_X                         );
+  tree->SetBranchAddress("Dst_ENDVERTEX_X"                       , &Dst_ENDVERTEX_X                         );
   tree->SetBranchAddress("Dst_ENDVERTEX_Y"                       , &Dst_ENDVERTEX_Y                         );
   tree->SetBranchAddress("Dst_ENDVERTEX_Z"                       , &Dst_ENDVERTEX_Z                         );
   tree->SetBranchAddress("Dst_ENDVERTEX_XERR"                    , &Dst_ENDVERTEX_XERR                      );
@@ -52,9 +52,29 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("Dst_MMERR"                             , &Dst_MMERR                               );
   tree->SetBranchAddress("Dst_M"                                 , &Dst_M                                   );
   //tree->SetBranchAddress("Dst_ID"                                , &Dst_ID                                  );
-  //tree->SetBranchAddress("Dst_TAU"                               , &Dst_TAU                                 );
-  //tree->SetBranchAddress("Dst_TAUERR"                            , &Dst_TAUERR                              );
-  //tree->SetBranchAddress("Dst_TAUCHI2"                           , &Dst_TAUCHI2                             );
+  tree->SetBranchAddress("Dst_TAU"                               , &Dst_TAU                                 );
+  tree->SetBranchAddress("Dst_TAUERR"                            , &Dst_TAUERR                              );
+  tree->SetBranchAddress("Dst_TAUCHI2"                           , &Dst_TAUCHI2                             );
+  tree->SetBranchAddress("Dst_DTF_nPV"                           , &Dst_DTF_nPV                             );
+  tree->SetBranchAddress("Dst_DTF_D0_M"                          , &arr_Dst_DTF_D0_M                        ); 
+  tree->SetBranchAddress("Dst_DTF_M"                             , &arr_Dst_DTF_M                           );
+  tree->SetBranchAddress("Dst_DTF_chi2"                          , &arr_Dst_DTF_chi2                        );
+  tree->SetBranchAddress("Dst_DTF_bothmass_nPV"                  , &Dst_DTF_bothmass_nPV                    );
+  tree->SetBranchAddress("Dst_DTF_bothmass_D0_M"                 , &arr_Dst_DTF_bothmass_D0_M               );
+  tree->SetBranchAddress("Dst_DTF_bothmass_M"                    , &arr_Dst_DTF_bothmass_M                  );
+  tree->SetBranchAddress("Dst_DTF_bothmass_chi2"                 , &arr_Dst_DTF_bothmass_chi2               );
+  tree->SetBranchAddress("Dst_DTF_mass_nPV"                      , &Dst_DTF_mass_nPV                        );
+  tree->SetBranchAddress("Dst_DTF_mass_D0_M"                     , &arr_Dst_DTF_mass_D0_M                   );
+  tree->SetBranchAddress("Dst_DTF_mass_M"                        , &arr_Dst_DTF_mass_M                      );
+  tree->SetBranchAddress("Dst_DTF_mass_chi2"                     , &arr_Dst_DTF_mass_chi2                   );
+  tree->SetBranchAddress("Dst_DTF_mass_vtx_nPV"                  , &Dst_DTF_mass_vtx_nPV                    );
+  tree->SetBranchAddress("Dst_DTF_mass_vtx_D0_M"                 , &arr_Dst_DTF_mass_vtx_D0_M               );
+  tree->SetBranchAddress("Dst_DTF_mass_vtx_M"                    , &arr_Dst_DTF_mass_vtx_M                  );
+  tree->SetBranchAddress("Dst_DTF_mass_vtx_chi2"                 , &arr_Dst_DTF_mass_vtx_chi2               );
+  tree->SetBranchAddress("Dst_DTF_vtx_nPV"                       , &Dst_DTF_vtx_nPV                         );
+  tree->SetBranchAddress("Dst_DTF_vtx_D0_M"                      , &arr_Dst_DTF_vtx_D0_M                    );
+  tree->SetBranchAddress("Dst_DTF_vtx_M"                         , &arr_Dst_DTF_vtx_M                       );
+  tree->SetBranchAddress("Dst_DTF_vtx_chi2"                      , &arr_Dst_DTF_vtx_chi2                    );
   //tree->SetBranchAddress("Dst_L0Global_Dec"                      , &Dst_L0Global_Dec                        );
   //tree->SetBranchAddress("Dst_L0Global_TIS"                      , &Dst_L0Global_TIS                        );
   //tree->SetBranchAddress("Dst_L0Global_TOS"                      , &Dst_L0Global_TOS                        );
@@ -278,10 +298,10 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_Dec", &D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_Dec);
   //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_TIS", &D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_TIS);
   //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_TOS", &D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_TOS);
-  tree->SetBranchAddress("K_BPVVDZ"                              , &K_BPVVDZ                                );
-  tree->SetBranchAddress("K_DIRA_OWNPV"                          , &K_DIRA_OWNPV                            );
+  //tree->SetBranchAddress("K_BPVVDZ"                              , &K_BPVVDZ                                );
+  //tree->SetBranchAddress("K_DIRA_OWNPV"                          , &K_DIRA_OWNPV                            );
   //tree->SetBranchAddress("K_ENDVERTEX_CHI2"                      , &K_ENDVERTEX_CHI2                        );
-  tree->SetBranchAddress("K_FD_CHI2"                             , &K_FD_CHI2                               );
+  //tree->SetBranchAddress("K_FD_CHI2"                             , &K_FD_CHI2                               );
   //tree->SetBranchAddress("K_LTIME"                               , &K_LTIME                                 );
   tree->SetBranchAddress("K_MINIP"                               , &K_MINIP                                 );
   tree->SetBranchAddress("K_MINIPCHI2"                           , &K_MINIPCHI2                             );
@@ -359,10 +379,10 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("K_hasRich"                             , &K_hasRich                               );
   //tree->SetBranchAddress("K_hasCalo"                             , &K_hasCalo                               );
   tree->SetBranchAddress("K_DOCAZ"                               , &K_DOCAZ                                 );
-  tree->SetBranchAddress("Pi_BPVVDZ"                             , &Pi_BPVVDZ                               );
-  tree->SetBranchAddress("Pi_DIRA_OWNPV"                         , &Pi_DIRA_OWNPV                           );
+  //tree->SetBranchAddress("Pi_BPVVDZ"                             , &Pi_BPVVDZ                               );
+  //tree->SetBranchAddress("Pi_DIRA_OWNPV"                         , &Pi_DIRA_OWNPV                           );
   //tree->SetBranchAddress("Pi_ENDVERTEX_CHI2"                     , &Pi_ENDVERTEX_CHI2                       );
-  tree->SetBranchAddress("Pi_FD_CHI2"                            , &Pi_FD_CHI2                              );
+  //tree->SetBranchAddress("Pi_FD_CHI2"                            , &Pi_FD_CHI2                              );
   //tree->SetBranchAddress("Pi_LTIME"                              , &Pi_LTIME                                );
   tree->SetBranchAddress("Pi_MINIP"                              , &Pi_MINIP                                );
   tree->SetBranchAddress("Pi_MINIPCHI2"                          , &Pi_MINIPCHI2                            );
@@ -440,10 +460,10 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("Pi_hasRich"                            , &Pi_hasRich                              );
   //tree->SetBranchAddress("Pi_hasCalo"                            , &Pi_hasCalo                              );
   tree->SetBranchAddress("Pi_DOCAZ"                              , &Pi_DOCAZ                                );
-  tree->SetBranchAddress("PiBach_BPVVDZ"                         , &PiBach_BPVVDZ                           );
-  tree->SetBranchAddress("PiBach_DIRA_OWNPV"                     , &PiBach_DIRA_OWNPV                       );
+  //tree->SetBranchAddress("PiBach_BPVVDZ"                         , &PiBach_BPVVDZ                           );
+  //tree->SetBranchAddress("PiBach_DIRA_OWNPV"                     , &PiBach_DIRA_OWNPV                       );
   //tree->SetBranchAddress("PiBach_ENDVERTEX_CHI2"                 , &PiBach_ENDVERTEX_CHI2                   );
-  tree->SetBranchAddress("PiBach_FD_CHI2"                        , &PiBach_FD_CHI2                          );
+  //tree->SetBranchAddress("PiBach_FD_CHI2"                        , &PiBach_FD_CHI2                          );
   //tree->SetBranchAddress("PiBach_LTIME"                          , &PiBach_LTIME                            );
   tree->SetBranchAddress("PiBach_MINIP"                          , &PiBach_MINIP                            );
   tree->SetBranchAddress("PiBach_MINIPCHI2"                      , &PiBach_MINIPCHI2                        );
@@ -604,6 +624,9 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("allPV_Chi2"                             , &PVCHI2                                , "allPVCHI2[nPV]/F"                  );
   tree->Branch("allPV_Ndof"                             , &PVNDOF                                , "allPVNDOF[nPV]/F"                  );
   // D*
+  tree->Branch("Dst_TAU"                                , &Dst_TAU                                , "Dst_TAU/D"                         );
+  tree->Branch("Dst_TAUERR"                             , &Dst_TAUERR                             , "Dst_TAUERR/D"                      );
+  tree->Branch("Dst_TAUCHI2"                            , &Dst_TAUCHI2                            , "Dst_TAUCHI2/D"                     );
   tree->Branch("Dst_BPVVDZ"                            , &Dst_BPVVDZ                              , "Dst_BPVVDZ/D"                          );
   tree->Branch("Dst_DIRA_OWNPV"                        , &Dst_DIRA_OWNPV                          , "Dst_DIRA_OWNPV/D"                      );
   tree->Branch("Dst_ENDVERTEX_CHI2"                    , &Dst_ENDVERTEX_CHI2                      , "Dst_ENDVERTEX_CHI2/D"                  );
@@ -628,6 +651,21 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("Dst_PY"                                , &Dst_PY                                  , "Dst_PY/D"                              );
   tree->Branch("Dst_PZ"                                , &Dst_PZ                                  , "Dst_PZ/D"                              );
   tree->Branch("Dst_M"                                 , &Dst_M                                   , "Dst_M/D"                               );
+  tree->Branch("Dst_DTF_D0_M"                          , &Dst_DTF_D0_M                            , "Dst_DTF_D0_M/F"                        ); 
+  tree->Branch("Dst_DTF_M"                             , &Dst_DTF_M                               , "Dst_DTF_M/F"                           );
+  tree->Branch("Dst_DTF_chi2"                          , &Dst_DTF_chi2                            , "Dst_DTF_chi2/F"                        );
+  //tree->Branch("Dst_DTF_bothmass_D0_M"                 , &Dst_DTF_bothmass_D0_M                   , "Dst_DTF_bothmass_D0_M/F"               );
+  //tree->Branch("Dst_DTF_bothmass_M"                    , &Dst_DTF_bothmass_M                      , "Dst_DTF_bothmass_M/F"                  );
+  tree->Branch("Dst_DTF_bothmass_chi2"                 , &Dst_DTF_bothmass_chi2                   , "Dst_DTF_bothmass_chi2/F"               );
+  //tree->Branch("Dst_DTF_mass_D0_M"                     , &Dst_DTF_mass_D0_M                       , "Dst_DTF_mass_D0_M/F"                   );
+  tree->Branch("Dst_DTF_mass_M"                        , &Dst_DTF_mass_M                          , "Dst_DTF_mass_M/F"                      );
+  tree->Branch("Dst_DTF_mass_chi2"                     , &Dst_DTF_mass_chi2                       , "Dst_DTF_mass_chi2/F"                   );
+  //tree->Branch("Dst_DTF_mass_vtx_D0_M"                 , &Dst_DTF_mass_vtx_D0_M                   , "Dst_DTF_mass_vtx_D0_M/F"               );
+  tree->Branch("Dst_DTF_mass_vtx_M"                    , &Dst_DTF_mass_vtx_M                      , "Dst_DTF_mass_vtx_M/F"                  );
+  tree->Branch("Dst_DTF_mass_vtx_chi2"                 , &Dst_DTF_mass_vtx_chi2                   , "Dst_DTF_mass_vtx_chi2/F"               );
+  tree->Branch("Dst_DTF_vtx_D0_M"                      , &Dst_DTF_vtx_D0_M                        , "Dst_DTF_vtx_D0_M/F"                    );
+  tree->Branch("Dst_DTF_vtx_M"                         , &Dst_DTF_vtx_M                           , "Dst_DTF_vtx_M/F"                       );
+  tree->Branch("Dst_DTF_vtx_chi2"                      , &Dst_DTF_vtx_chi2                        , "Dst_DTF_vtx_chi2/F"                    );
   tree->Branch("Dst_Hlt1CalibTrackingKPiDecision_TOS"  , &Dst_Hlt1CalibTrackingKPiDecision_TOS    , "Dst_Hlt1CalibTrackingKPiDecision_TOS/O");
   tree->Branch("Dst_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TOS", &Dst_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TOS, "Dst_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TOS/O");
   // D0
@@ -668,8 +706,8 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("D0_TAU"                                , &D0_TAU                                  , "D0_TAU/D"                              );
   tree->Branch("D0_TAUERR"                             , &D0_TAUERR                               , "D0_TAUERR"                             );
   // Km 
-  tree->Branch("K_BPVVDZ"                              , &K_BPVVDZ                                , "K_BPVVDZ/D"                            );
-  tree->Branch("K_DIRA_OWNPV"                          , &K_DIRA_OWNPV                            , "K_DIRA_OWNPV/D"                        );
+  //tree->Branch("K_BPVVDZ"                              , &K_BPVVDZ                                , "K_BPVVDZ/D"                            );
+  //tree->Branch("K_DIRA_OWNPV"                          , &K_DIRA_OWNPV                            , "K_DIRA_OWNPV/D"                        );
   tree->Branch("K_MinIP"                               , &K_MINIP                                 , "K_MINIP/D"                             );
   tree->Branch("K_MinIPChi2"                           , &K_MINIPCHI2                             , "K_MINIPCHI2/D"                         );
   tree->Branch("K_IP"                                  , &K_IP_OWNPV                              , "K_IP_OWNPV/D"                          );
@@ -695,8 +733,8 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("K_isMuon"                              , &K_isMuon                                , "K_isMuon/O"                            );
   tree->Branch("K_DOCAZ"                               , &K_DOCAZ                                 , "K_DOCAZ/D"                             );
   // Pip
-  tree->Branch("Pi_BPVVDZ"                             , &Pi_BPVVDZ                               , "Pi_BPVVDZ/D"                           );
-  tree->Branch("Pi_DIRA_OWNPV"                         , &Pi_DIRA_OWNPV                           , "Pi_DIRA_OWNPV/D"                       );
+  //tree->Branch("Pi_BPVVDZ"                             , &Pi_BPVVDZ                               , "Pi_BPVVDZ/D"                           );
+  //tree->Branch("Pi_DIRA_OWNPV"                         , &Pi_DIRA_OWNPV                           , "Pi_DIRA_OWNPV/D"                       );
   tree->Branch("Pi_MinIP"                              , &Pi_MINIP                                , "Pi_MINIP/D"                            );
   tree->Branch("Pi_MinIPChi2"                          , &Pi_MINIPCHI2                            , "Pi_MINIPCHI2/D"                        );
   tree->Branch("Pi_IP"                                 , &Pi_IP_OWNPV                             , "Pi_IP_OWNPV/D"                         );
@@ -721,8 +759,8 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("Pi_ProbNNghost"                        , &Pi_ProbNNghost                          , "Pi_ProbNNghost/D"                      );
   tree->Branch("Pi_isMuon"                             , &Pi_isMuon                               , "Pi_isMuon/O"                           );
   tree->Branch("Pi_DOCAZ"                              , &Pi_DOCAZ                                , "Pi_DOCAZ/D"                            );
-  tree->Branch("PiBach_BPVVDZ"                         , &PiBach_BPVVDZ                           , "PiBach_BPVVDZ/D"                       );
-  tree->Branch("PiBach_DIRA_OWNPV"                     , &PiBach_DIRA_OWNPV                       , "PiBach_DIRA_OWNPV/D"                   );
+  //tree->Branch("PiBach_BPVVDZ"                         , &PiBach_BPVVDZ                           , "PiBach_BPVVDZ/D"                       );
+  //tree->Branch("PiBach_DIRA_OWNPV"                     , &PiBach_DIRA_OWNPV                       , "PiBach_DIRA_OWNPV/D"                   );
   tree->Branch("PiBach_MinIP"                          , &PiBach_MINIP                            , "PiBach_MINIP/D"                        );
   tree->Branch("PiBach_MinIPChi2"                      , &PiBach_MINIPCHI2                        , "PiBach_MINIPCHI2/D"                    );
   tree->Branch("PiBach_IP"                             , &PiBach_IP_OWNPV                         , "PiBach_IP_OWNPV/D"                     );
