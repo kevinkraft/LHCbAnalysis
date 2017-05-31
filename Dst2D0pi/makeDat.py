@@ -10,9 +10,9 @@ import os, sys
 
 #---------------------------------------------------------------
 
-ff = '/afs/cern.ch/user/k/kmaguire/cmtuser/DaVinciDev_v39r0p1/D0Lifetime/TupleMaking/magup_xrootd.txt'
+ff = '/afs/cern.ch/user/k/kmaguire/cmtuser/DaVinciDev_v39r0p1/D0Lifetime/TupleMaking/magup_xrootd_5-99.txt'
 treename = 'TeslaRSTuple/DecayTree'
-fout = '/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/may17_magup_full.dat'
+fout = '/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/june17_magup_firstbatch.dat'
 itype = '130'
 year = '2015'
 name = 'Data'

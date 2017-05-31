@@ -114,11 +114,11 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("Dst_Hlt1TrackMuonDecision_Dec"         , &Dst_Hlt1TrackMuonDecision_Dec           );
   //tree->SetBranchAddress("Dst_Hlt1TrackMuonDecision_TIS"         , &Dst_Hlt1TrackMuonDecision_TIS           );
   //tree->SetBranchAddress("Dst_Hlt1TrackMuonDecision_TOS"         , &Dst_Hlt1TrackMuonDecision_TOS           );
-  //tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDetachedDecision_Dec", &Dst_Hlt1CalibTrackingKPiDetachedDecision_Dec);
-  //tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDetachedDecision_TIS", &Dst_Hlt1CalibTrackingKPiDetachedDecision_TIS);
-  //tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDetachedDecision_TOS", &Dst_Hlt1CalibTrackingKPiDetachedDecision_TOS);
-  //tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDecision_Dec"  , &Dst_Hlt1CalibTrackingKPiDecision_Dec    );
-  //tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDecision_TIS"  , &Dst_Hlt1CalibTrackingKPiDecision_TIS    );
+  //  tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDetachedDecision_Dec", &Dst_Hlt1CalibTrackingKPiDetachedDecision_Dec);
+  //  tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDetachedDecision_TIS", &Dst_Hlt1CalibTrackingKPiDetachedDecision_TIS);
+  //  tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDetachedDecision_TOS", &Dst_Hlt1CalibTrackingKPiDetachedDecision_TOS);
+  //  tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDecision_Dec"  , &Dst_Hlt1CalibTrackingKPiDecision_Dec    );
+  //  tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDecision_TIS"  , &Dst_Hlt1CalibTrackingKPiDecision_TIS    );
   tree->SetBranchAddress("Dst_Hlt1CalibTrackingKPiDecision_TOS"  , &Dst_Hlt1CalibTrackingKPiDecision_TOS    );
   //tree->SetBranchAddress("Dst_Hlt1CalibTrackingKKDecision_Dec"   , &Dst_Hlt1CalibTrackingKKDecision_Dec     );
   //tree->SetBranchAddress("Dst_Hlt1CalibTrackingKKDecision_TIS"   , &Dst_Hlt1CalibTrackingKKDecision_TIS     );
@@ -232,9 +232,9 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("D0_Hlt2Phys_Dec"                       , &D0_Hlt2Phys_Dec                         );
   //tree->SetBranchAddress("D0_Hlt2Phys_TIS"                       , &D0_Hlt2Phys_TIS                         );
   //tree->SetBranchAddress("D0_Hlt2Phys_TOS"                       , &D0_Hlt2Phys_TOS                         );
-  //tree->SetBranchAddress("D0_L0HadronDecision_Dec"               , &D0_L0HadronDecision_Dec                 );
-  //tree->SetBranchAddress("D0_L0HadronDecision_TIS"               , &D0_L0HadronDecision_TIS                 );
-  //tree->SetBranchAddress("D0_L0HadronDecision_TOS"               , &D0_L0HadronDecision_TOS                 );
+  tree->SetBranchAddress("D0_L0HadronDecision_Dec"               , &D0_L0HadronDecision_Dec                 );
+  tree->SetBranchAddress("D0_L0HadronDecision_TIS"               , &D0_L0HadronDecision_TIS                 );
+  tree->SetBranchAddress("D0_L0HadronDecision_TOS"               , &D0_L0HadronDecision_TOS                 );
   //tree->SetBranchAddress("D0_L0ElectronDecision_Dec"             , &D0_L0ElectronDecision_Dec               );
   //tree->SetBranchAddress("D0_L0ElectronDecision_TIS"             , &D0_L0ElectronDecision_TIS               );
   //tree->SetBranchAddress("D0_L0ElectronDecision_TOS"             , &D0_L0ElectronDecision_TOS               );
@@ -256,12 +256,12 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("D0_Hlt1TrackMuonDecision_Dec"          , &D0_Hlt1TrackMuonDecision_Dec            );
   //tree->SetBranchAddress("D0_Hlt1TrackMuonDecision_TIS"          , &D0_Hlt1TrackMuonDecision_TIS            );
   //tree->SetBranchAddress("D0_Hlt1TrackMuonDecision_TOS"          , &D0_Hlt1TrackMuonDecision_TOS            );
-  //tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDetachedDecision_Dec", &D0_Hlt1CalibTrackingKPiDetachedDecision_Dec);
-  //tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDetachedDecision_TIS", &D0_Hlt1CalibTrackingKPiDetachedDecision_TIS);
-  //tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDetachedDecision_TOS", &D0_Hlt1CalibTrackingKPiDetachedDecision_TOS);
-  //tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDecision_Dec"   , &D0_Hlt1CalibTrackingKPiDecision_Dec     );
-  //tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDecision_TIS"   , &D0_Hlt1CalibTrackingKPiDecision_TIS     );
-  //tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDecision_TOS"   , &D0_Hlt1CalibTrackingKPiDecision_TOS     );
+  tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDetachedDecision_Dec", &D0_Hlt1CalibTrackingKPiDetachedDecision_Dec);
+  tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDetachedDecision_TIS", &D0_Hlt1CalibTrackingKPiDetachedDecision_TIS);
+  tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDetachedDecision_TOS", &D0_Hlt1CalibTrackingKPiDetachedDecision_TOS);
+  tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDecision_Dec"   , &D0_Hlt1CalibTrackingKPiDecision_Dec     );
+  tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDecision_TIS"   , &D0_Hlt1CalibTrackingKPiDecision_TIS     );
+  tree->SetBranchAddress("D0_Hlt1CalibTrackingKPiDecision_TOS"   , &D0_Hlt1CalibTrackingKPiDecision_TOS     );
   //tree->SetBranchAddress("D0_Hlt1CalibTrackingKKDecision_Dec"    , &D0_Hlt1CalibTrackingKKDecision_Dec      );
   //tree->SetBranchAddress("D0_Hlt1CalibTrackingKKDecision_TIS"    , &D0_Hlt1CalibTrackingKKDecision_TIS      );
   //tree->SetBranchAddress("D0_Hlt1CalibTrackingKKDecision_TOS"    , &D0_Hlt1CalibTrackingKKDecision_TOS      );
@@ -286,9 +286,9 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("D0_Hlt1B2PhiPhi_LTUNBDecision_Dec"     , &D0_Hlt1B2PhiPhi_LTUNBDecision_Dec       );
   //tree->SetBranchAddress("D0_Hlt1B2PhiPhi_LTUNBDecision_TIS"     , &D0_Hlt1B2PhiPhi_LTUNBDecision_TIS       );
   //tree->SetBranchAddress("D0_Hlt1B2PhiPhi_LTUNBDecision_TOS"     , &D0_Hlt1B2PhiPhi_LTUNBDecision_TOS       );
-  //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_Dec", &D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_Dec);
-  //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TIS", &D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TIS);
-  //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TOS", &D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TOS);
+  tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_Dec", &D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_Dec);
+  tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TIS", &D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TIS);
+  tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TOS", &D0_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TOS);
   //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02KpPim_LTUNBTurboDecision_Dec", &D0_Hlt2CharmHadDstp2D0Pip_D02KpPim_LTUNBTurboDecision_Dec);
   //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02KpPim_LTUNBTurboDecision_TIS", &D0_Hlt2CharmHadDstp2D0Pip_D02KpPim_LTUNBTurboDecision_TIS);
   //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02KpPim_LTUNBTurboDecision_TOS", &D0_Hlt2CharmHadDstp2D0Pip_D02KpPim_LTUNBTurboDecision_TOS);
@@ -298,6 +298,24 @@ void Dst2D0pi::Variables_Analysis::setInputBranches(TTree *tree) {
   //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_Dec", &D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_Dec);
   //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_TIS", &D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_TIS);
   //tree->SetBranchAddress("D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_TOS", &D0_Hlt2CharmHadDstp2D0Pip_D02PimPip_LTUNBTurboDecision_TOS);
+  tree->SetBranchAddress("D0_Hlt2Topo2BodyDecision_TIS", &D0_Hlt2Topo2BodyDecision_TIS);
+  tree->SetBranchAddress("D0_Hlt2Topo2BodyDecision_TOS", &D0_Hlt2Topo2BodyDecision_TOS);
+  tree->SetBranchAddress("D0_Hlt2Topo2BodyDecision_Dec", &D0_Hlt2Topo2BodyDecision_Dec);
+  tree->SetBranchAddress("D0_Hlt2Topo3BodyDecision_TIS", &D0_Hlt2Topo3BodyDecision_TIS);
+  tree->SetBranchAddress("D0_Hlt2Topo3BodyDecision_TOS", &D0_Hlt2Topo3BodyDecision_TOS);
+  tree->SetBranchAddress("D0_Hlt2Topo3BodyDecision_Dec", &D0_Hlt2Topo3BodyDecision_Dec);
+  tree->SetBranchAddress("D0_Hlt2Topo4BodyDecision_TIS", &D0_Hlt2Topo4BodyDecision_TIS);
+  tree->SetBranchAddress("D0_Hlt2Topo4BodyDecision_TOS", &D0_Hlt2Topo4BodyDecision_TOS);
+  tree->SetBranchAddress("D0_Hlt2Topo4BodyDecision_Dec", &D0_Hlt2Topo4BodyDecision_Dec);
+  tree->SetBranchAddress("D0_Hlt2TopoMu2BodyDecision_TIS", &D0_Hlt2TopoMu2BodyDecision_TIS);
+  tree->SetBranchAddress("D0_Hlt2TopoMu2BodyDecision_TOS", &D0_Hlt2TopoMu2BodyDecision_TOS);
+  tree->SetBranchAddress("D0_Hlt2TopoMu2BodyDecision_Dec", &D0_Hlt2TopoMu2BodyDecision_Dec);
+  tree->SetBranchAddress("D0_Hlt2TopoMu3BodyDecision_TIS", &D0_Hlt2TopoMu3BodyDecision_TIS);
+  tree->SetBranchAddress("D0_Hlt2TopoMu3BodyDecision_TOS", &D0_Hlt2TopoMu3BodyDecision_TOS);
+  tree->SetBranchAddress("D0_Hlt2TopoMu3BodyDecision_Dec", &D0_Hlt2TopoMu3BodyDecision_Dec);
+  tree->SetBranchAddress("D0_Hlt2TopoMu4BodyDecision_TIS", &D0_Hlt2TopoMu4BodyDecision_TIS);
+  tree->SetBranchAddress("D0_Hlt2TopoMu4BodyDecision_TOS", &D0_Hlt2TopoMu4BodyDecision_TOS);
+  tree->SetBranchAddress("D0_Hlt2TopoMu4BodyDecision_Dec", &D0_Hlt2TopoMu4BodyDecision_Dec);
   //tree->SetBranchAddress("K_BPVVDZ"                              , &K_BPVVDZ                                );
   //tree->SetBranchAddress("K_DIRA_OWNPV"                          , &K_DIRA_OWNPV                            );
   //tree->SetBranchAddress("K_ENDVERTEX_CHI2"                      , &K_ENDVERTEX_CHI2                        );
@@ -666,6 +684,7 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("Dst_DTF_vtx_D0_M"                      , &Dst_DTF_vtx_D0_M                        , "Dst_DTF_vtx_D0_M/F"                    );
   tree->Branch("Dst_DTF_vtx_M"                         , &Dst_DTF_vtx_M                           , "Dst_DTF_vtx_M/F"                       );
   tree->Branch("Dst_DTF_vtx_chi2"                      , &Dst_DTF_vtx_chi2                        , "Dst_DTF_vtx_chi2/F"                    );
+  //triggers
   tree->Branch("Dst_Hlt1CalibTrackingKPiDecision_TOS"  , &Dst_Hlt1CalibTrackingKPiDecision_TOS    , "Dst_Hlt1CalibTrackingKPiDecision_TOS/O");
   tree->Branch("Dst_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TOS", &Dst_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TOS, "Dst_Hlt2CharmHadDstp2D0Pip_D02KmPip_LTUNBTurboDecision_TOS/O");
   // D0
@@ -705,6 +724,26 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("D0_M"                                  , &D0_M                                    , "D0_M/D"                                );
   tree->Branch("D0_TAU"                                , &D0_TAU                                  , "D0_TAU/D"                              );
   tree->Branch("D0_TAUERR"                             , &D0_TAUERR                               , "D0_TAUERR"                             );
+  //triggers
+  tree->Branch("D0_Hlt2Topo2BodyDecision_TIS", &D0_Hlt2Topo2BodyDecision_TIS, "D0_Hlt2Topo2BodyDecision_TIS/O");
+  tree->Branch("D0_Hlt2Topo2BodyDecision_TOS", &D0_Hlt2Topo2BodyDecision_TOS, "D0_Hlt2Topo2BodyDecision_TOS/O");
+  tree->Branch("D0_Hlt2Topo2BodyDecision_Dec", &D0_Hlt2Topo2BodyDecision_Dec, "D0_Hlt2Topo2BodyDecision_Dec/O");
+  tree->Branch("D0_Hlt2Topo3BodyDecision_TIS", &D0_Hlt2Topo3BodyDecision_TIS, "D0_Hlt2Topo3BodyDecision_TIS/O");
+  tree->Branch("D0_Hlt2Topo3BodyDecision_TOS", &D0_Hlt2Topo3BodyDecision_TOS, "D0_Hlt2Topo3BodyDecision_TOS/O");
+  tree->Branch("D0_Hlt2Topo3BodyDecision_Dec", &D0_Hlt2Topo3BodyDecision_Dec, "D0_Hlt2Topo3BodyDecision_Dec/O");
+  tree->Branch("D0_Hlt2Topo4BodyDecision_TIS", &D0_Hlt2Topo4BodyDecision_TIS, "D0_Hlt2Topo4BodyDecision_TIS/O");
+  tree->Branch("D0_Hlt2Topo4BodyDecision_TOS", &D0_Hlt2Topo4BodyDecision_TOS, "D0_Hlt2Topo4BodyDecision_TOS/O");
+  tree->Branch("D0_Hlt2Topo4BodyDecision_Dec", &D0_Hlt2Topo4BodyDecision_Dec, "D0_Hlt2Topo4BodyDecision_Dec/O");
+  tree->Branch("D0_Hlt2TopoMu2BodyDecision_TIS", &D0_Hlt2TopoMu2BodyDecision_TIS, "D0_Hlt2TopoMu2BodyDecision_TIS/O");
+  tree->Branch("D0_Hlt2TopoMu2BodyDecision_TOS", &D0_Hlt2TopoMu2BodyDecision_TOS, "D0_Hlt2TopoMu2BodyDecision_TOS/O");
+  tree->Branch("D0_Hlt2TopoMu2BodyDecision_Dec", &D0_Hlt2TopoMu2BodyDecision_Dec, "D0_Hlt2TopoMu2BodyDecision_Dec/O");
+  tree->Branch("D0_Hlt2TopoMu3BodyDecision_TIS", &D0_Hlt2TopoMu3BodyDecision_TIS, "D0_Hlt2TopoMu3BodyDecision_TIS/O");
+  tree->Branch("D0_Hlt2TopoMu3BodyDecision_TOS", &D0_Hlt2TopoMu3BodyDecision_TOS, "D0_Hlt2TopoMu3BodyDecision_TOS/O");
+  tree->Branch("D0_Hlt2TopoMu3BodyDecision_Dec", &D0_Hlt2TopoMu3BodyDecision_Dec, "D0_Hlt2TopoMu3BodyDecision_Dec/O");
+  tree->Branch("D0_Hlt2TopoMu4BodyDecision_TIS", &D0_Hlt2TopoMu4BodyDecision_TIS, "D0_Hlt2TopoMu4BodyDecision_TIS/O");
+  tree->Branch("D0_Hlt2TopoMu4BodyDecision_TOS", &D0_Hlt2TopoMu4BodyDecision_TOS, "D0_Hlt2TopoMu4BodyDecision_TOS/O");
+  tree->Branch("D0_Hlt2TopoMu4BodyDecision_Dec", &D0_Hlt2TopoMu4BodyDecision_Dec, "D0_Hlt2TopoMu4BodyDecision_Dec/O");
+
   // Km 
   //tree->Branch("K_BPVVDZ"                              , &K_BPVVDZ                                , "K_BPVVDZ/D"                            );
   //tree->Branch("K_DIRA_OWNPV"                          , &K_DIRA_OWNPV                            , "K_DIRA_OWNPV/D"                        );
@@ -793,3 +832,4 @@ void Dst2D0pi::Variables_Analysis::setOutputBranches(TTree *tree) {
   tree->Branch("Dst_Vtx_dist_z"                        , &Dst_Vtx_dist_z                          , "Dst_Vtx_dist_z/D"                      );
   tree->Branch("Dst_Vtx_dist_signed"                   , &Dst_Vtx_dist_signed                     , "Dst_Vtx_dist_signed/D"                 );
 }
+

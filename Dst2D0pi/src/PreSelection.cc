@@ -23,8 +23,7 @@ bool Dst2D0pi::PreSelection::AnalyseEvent(){
   if ( v->mDz < 1.81 || v->mDz > 1.92 ) return false; 
 
   //radial cut
-  if ( Sqrt( Power( v->D0_ENDVERTEX_X - v->BPVX , 2 ) +
-             Power( v->D0_ENDVERTEX_Y - v->BPVY , 2 ) ) > 4. ) return false;
+  if ( Sqrt( Power( v->D0_ENDVERTEX_X - v->BPVX , 2 ) + Power( v->D0_ENDVERTEX_Y - v->BPVY , 2 ) ) > 4. ) return false;
   //other cuts
   if ( v->Dst_ENDVERTEX_CHI2 / v->Dst_ENDVERTEX_NDOF > 15. ) return false;
   if ( v->Dst_ENDVERTEX_ZERR > 20. ) return false;

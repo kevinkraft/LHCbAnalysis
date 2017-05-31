@@ -5,7 +5,10 @@ import os
 filesperjob=1
 
 #f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/jan17_full.dat')
-f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/may17_test.dat')
+#f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/may17_test.dat')
+#f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/may17_magup_full.dat')
+#f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/may17_magdown_full.dat')
+f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/june17_magup_firstbatch.dat')
 
 file_lines = []
 
@@ -15,20 +18,22 @@ for line in f.readlines():
 
 #bq = 'test'
 #bq = '8nm'
-bq = '1nh'
-#bq = '8nh'
+#bq = '1nh'
+bq = '8nh'
 #bq = '1nd'
 jobsfolder = 'data_jobs_'+bq
 
 jobsreq = len(file_lines)
+firstjob = 0
+#jobsreq = 1
 
 print jobsreq, ' ', filesperjob, ' ', len(file_lines)
 
-#rerun = []
+rerun = [44]
 
-for j in range(0, jobsreq):
+for j in range(firstjob, jobsreq):
 
-  submit = True
+  submit = False
 
   for i in range(j*filesperjob, j*filesperjob + filesperjob ):
     if i > len(file_lines)-1: break
@@ -36,8 +41,8 @@ for j in range(0, jobsreq):
     #if 'cnaf' in file_lines[i]:
       #print 'Job {0} has the extra XROOTD suffix'.format(j)
       #print 'Job {0} is cnaf'.format(j)
-    #if i in rerun:
-    #  submit = True
+    if i in rerun:
+      submit = True
     df = open('%s/'%(os.getcwd())+jobsfolder+'/data_j%d.dat'%(j),'w')
     df.write(file_lines[i])
     df.close()
@@ -50,8 +55,10 @@ for j in range(0, jobsreq):
   
   sf.write('mkdir -p scratch\n')
   sf.write('cd scratch\n')
+  #sf.write('source /afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/scripts/setup_lxplus.sh\n')
   sf.write('LbLogin.sh -c x86_64-slc6-gcc48-opt\n')
-  sf.write('SetupProject DaVinci v41r3\n')
+  sf.write('SetupProject DaVinci v41r2p1\n')
+  #sf.write('lb-run DaVinci/v41r2p1 bash\n')
   sf.write('cp %s/bin/Dst2D0pi_Analysis .\n'%os.getcwd())
   sf.write('cp %s .\n'%df.name)
   sf.write('if ( ./Dst2D0pi_Analysis -c %s -o data_j%d.root -b ) then\n'%(os.path.basename(df.name),j))
