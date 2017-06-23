@@ -2,12 +2,14 @@
 
 import os
 
-filesperjob=1
+filesperjob=1 #I think this must be 1?
 
 #f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/jan17_full.dat')
 #f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/may17_test.dat')
 #f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/may17_magup_full.dat')
 #f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/may17_magdown_full.dat')
+#f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/june17_magup_firstbatch.dat')
+#f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/june17_magup.dat')
 f = open('/afs/cern.ch/user/k/kmaguire/Programs/KenzieAnalysisFork/Dst2D0pi/dat/june17_magup_firstbatch.dat')
 
 file_lines = []
@@ -29,11 +31,13 @@ firstjob = 0
 
 print jobsreq, ' ', filesperjob, ' ', len(file_lines)
 
-rerun = [44]
+#rerun = [12,17,21,57,63,77,391,567]
+#rerun = [125,151,166,250,253,269,27,319,346,397,441,455,459,51,88]
+rerun = []
 
 for j in range(firstjob, jobsreq):
 
-  submit = False
+  submit = True
 
   for i in range(j*filesperjob, j*filesperjob + filesperjob ):
     if i > len(file_lines)-1: break
@@ -41,8 +45,8 @@ for j in range(firstjob, jobsreq):
     #if 'cnaf' in file_lines[i]:
       #print 'Job {0} has the extra XROOTD suffix'.format(j)
       #print 'Job {0} is cnaf'.format(j)
-    if i in rerun:
-      submit = True
+    #if i in rerun:
+    #  submit = True
     df = open('%s/'%(os.getcwd())+jobsfolder+'/data_j%d.dat'%(j),'w')
     df.write(file_lines[i])
     df.close()
